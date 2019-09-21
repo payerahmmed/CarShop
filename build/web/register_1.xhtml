@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="j_idt2"><link type="text/css" rel="stylesheet" href="/CarApp/faces/javax.faces.resource/theme.css?ln=primefaces-aristo" /><link type="text/css" rel="stylesheet" href="/CarApp/faces/javax.faces.resource/bootstrap.min.css?ln=css" /><link type="text/css" rel="stylesheet" href="/CarApp/faces/javax.faces.resource/signin.css?ln=css" /><link type="text/css" rel="stylesheet" href="/CarApp/faces/javax.faces.resource/components.css?ln=primefaces&amp;v=7.0" /><script type="text/javascript" src="/CarApp/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces&amp;v=7.0"></script><script type="text/javascript" src="/CarApp/faces/javax.faces.resource/jquery/jquery-plugins.js?ln=primefaces&amp;v=7.0"></script><script type="text/javascript" src="/CarApp/faces/javax.faces.resource/core.js?ln=primefaces&amp;v=7.0"></script><script type="text/javascript" src="/CarApp/faces/javax.faces.resource/components.js?ln=primefaces&amp;v=7.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en_US';PrimeFaces.settings.projectStage='Development';}</script>
+        <title>Facelet Title</title>
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .errors {
+                text-align: right;
+                vertical-align: middle;
+                display: inline-block;
+                width: 40px;
+                padding: 6px 10px;
+                margin: 5px;
+                height: 30px;
+            }
+
+            .form-group {
+                margin-bottom: 0rem !important;
+            }
+        </style></head><body>
+<form id="j_idt8" name="j_idt8" method="post" action="/CarApp/faces/register.xhtml" class="form-signin" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt8" value="j_idt8" />
+
+            <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1><span id="j_idt8:msg"></span><script id="j_idt8:msg_s" type="text/javascript">$(function(){PrimeFaces.cw("Growl","widget_j_idt8_msg",{id:"j_idt8:msg",sticky:false,life:6000,escape:true,keepAlive:false,msgs:[]});});</script><div id="j_idt8:msgs" class="ui-messages ui-widget" aria-live="polite"></div>
+            <div class="form-group"><label id="j_idt8:j_idt11" class="ui-outputlabel ui-widget " for="j_idt8:fullName">Full Name<span class="ui-outputlabel-rfi">*</span></label><input id="j_idt8:fullName" name="j_idt8:fullName" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" aria-required="true" placeholder="Full Name" /><script id="j_idt8:fullName_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_j_idt8_fullName",{id:"j_idt8:fullName",maxlength:-2147483648});});</script><div id="j_idt8:j_idt12" aria-live="polite" class="errors ui-message"></div><script id="j_idt8:j_idt12_s" type="text/javascript">$(function(){PrimeFaces.cw("Message","widget_j_idt8_j_idt12",{id:"j_idt8:j_idt12",target:"j_idt8:fullName"});});</script>
+            </div>
+            <div class="form-group"><label id="j_idt8:j_idt14" class="ui-outputlabel ui-widget " for="j_idt8:username">Username<span class="ui-outputlabel-rfi">*</span></label><input id="j_idt8:username" name="j_idt8:username" type="text" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" aria-required="true" placeholder="Username" onkeyup="PrimeFaces.ab({s:&quot;j_idt8:username&quot;,e:&quot;keyup&quot;,f:&quot;j_idt8&quot;,p:&quot;j_idt8:username&quot;,u:&quot;j_idt8:msgusername&quot;});" /><script id="j_idt8:username_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_j_idt8_username",{id:"j_idt8:username",maxlength:-2147483648});});</script><div id="j_idt8:msgusername" aria-live="polite" class="errors ui-message"></div><script id="j_idt8:msgusername_s" type="text/javascript">$(function(){PrimeFaces.cw("Message","widget_j_idt8_msgusername",{id:"j_idt8:msgusername",target:"j_idt8:username"});});</script>
+            </div>
+
+            <div class="form-group"><label id="j_idt8:j_idt16" class="ui-outputlabel ui-widget " for="j_idt8:email">Email</label><input id="j_idt8:email" name="j_idt8:email" type="email" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" placeholder="Email" /><script id="j_idt8:email_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_j_idt8_email",{id:"j_idt8:email",maxlength:-2147483648});});</script><div id="j_idt8:j_idt17" aria-live="polite" class="errors ui-message"></div><script id="j_idt8:j_idt17_s" type="text/javascript">$(function(){PrimeFaces.cw("Message","widget_j_idt8_j_idt17",{id:"j_idt8:j_idt17",target:"j_idt8:email"});});</script>
+            </div>
+
+            <div class="form-group"><label id="j_idt8:j_idt19" class="ui-outputlabel ui-widget " for="j_idt8:password">Password<span class="ui-outputlabel-rfi">*</span></label><input id="j_idt8:password" name="j_idt8:password" type="password" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all form-control" aria-required="true" placeholder="Password" /><script id="j_idt8:password_s" type="text/javascript">$(function(){PrimeFaces.cw("InputText","widget_j_idt8_password",{id:"j_idt8:password",maxlength:-2147483648});});</script><div id="j_idt8:j_idt20" aria-live="polite" class="errors ui-message"></div><script id="j_idt8:j_idt20_s" type="text/javascript">$(function(){PrimeFaces.cw("Message","widget_j_idt8_j_idt20",{id:"j_idt8:j_idt20",target:"j_idt8:password"});});</script>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me" /> Terms and conditions
+                </label>
+            </div><button id="j_idt8:j_idt22" name="j_idt8:j_idt22" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-lg btn-success btn-block" onclick="PrimeFaces.ab({s:&quot;j_idt8:j_idt22&quot;,f:&quot;j_idt8&quot;,u:&quot;j_idt8:msg&quot;});return false;" type="submit"><span class="ui-button-text ui-c">Sign Up</span></button><script id="j_idt8:j_idt22_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_j_idt8_j_idt22",{id:"j_idt8:j_idt22"});});</script>
+            <p><a href="/CarApp/faces/login.xhtml" class="ui-link ui-widget">Sign In</a></p>
+            <br /><br />
+            <p class="mt-5 mb-3 text-muted">© 2017-2019</p><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="3345602433038775271:-5360649006819458871" autocomplete="off" />
+</form></body>
+</html>

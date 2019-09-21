@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Admin Home</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="carousel.css"/>        
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <p:link outcome="home" value="CarShope" styleClass="navbar-brand"/>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <p:link outcome="home" styleClass="nav-link" value="Home"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="category" value="Category"/>
+                        </li>  
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="product" value="Add Car"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="salesCar" value="Sales Car"/>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="userList" value="User List"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="carList" value="Car List"/>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.xhtml">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main role="main">           
+
+
+            <div class="container pt-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h:form>
+                            <p:growl id="msgs" showDetail="true" />
+
+                            <p:dashboard id="board" model="#{dashboardView.model}">
+                                <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs" />
+
+                                <p:panel id="sports" header="Users List">
+                                    <p:dataTable var="user" value="#{homeCtrl.allUsers()}">
+                                        <p:column headerText="Name">
+                                            <h:outputText value="#{user.fullName}" />
+                                        </p:column>
+
+                                        <p:column headerText="username">
+                                            <h:outputText value="#{user.username}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </p:panel>
+
+                                <p:panel id="finance" header="Total Category">
+                                    <h:outputText value="#{dashboardView.totalCategory}" />
+                                </p:panel>
+
+                                <p:panel id="lifestyle" header="Lifestyle">
+                                    <h:outputText value="Lifestyle Content"  />
+                                </p:panel>
+
+                                <p:panel id="weather" header="Weather">
+                                    <h:outputText value="Weather Content" />
+                                </p:panel>
+
+                                <p:panel id="politics" header="Politics">
+                                    <h:outputText value="Politics Content" />
+                                </p:panel>
+                            </p:dashboard>
+
+                            <div style="clear:both" />
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="container pt-5">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017-2019 FoodsApp. &middot; 
+                    <h:link value="Privacy"/><h:link value="Terms"/>
+                </p>
+            </footer>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <h:outputScript library="js" name="bootstrap.bundle.min.js"/>        
+    </h:body>
+</html>
+

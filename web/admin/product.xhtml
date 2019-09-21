@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="signin.css"/>
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+            .show-messge{
+                top: 65px !important;
+            }
+            .ui-growl{
+                top: 65px !important;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <p:link outcome="home" value="CarShope" styleClass="navbar-brand"/>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <p:link outcome="home" styleClass="nav-link" value="Home"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="category" value="Category"/>
+                        </li>  
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="product" value="Add Car"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="salesCar" value="Sales Car"/>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="userList" value="User List"/>
+                        </li>
+                        <li class="nav-item">
+                            <p:link class="nav-link" outcome="carList" value="Car List"/>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.xhtml">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h:form enctype="multipart/form-data">
+                        <h1>Add New Car.</h1>
+                        <p:growl id="msg" class="show-messge"/>
+                        <div class="form-group">                           
+                            <p:outputLabel for="productName">Car Name</p:outputLabel>
+                            <p:inputText value="#{productCtrl.product.productName}" styleClass="form-control" 
+                                         required="true"
+                                         id="productName">
+                                <f:validateLength minimum="2" />
+                            </p:inputText>
+                            <p:message for="productName" display="icon"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">                           
+                                    <p:outputLabel for="quantity">Quantity</p:outputLabel>
+                                    <p:inputText value="#{productCtrl.product.quantity}" 
+                                                 styleClass="form-control" 
+                                                 required="true"
+                                                 type="number"
+                                                 id="quantity">
+                                        <f:validateLength maximum="3" />
+                                    </p:inputText>
+                                    <p:message for="quantity" display="icon"/>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">                           
+                                    <p:outputLabel for="price">Price</p:outputLabel>
+                                    <p:inputText value="#{productCtrl.product.price}" 
+                                                 styleClass="form-control" 
+                                                 required="true"
+                                                 type="number"
+                                                 id="price">
+                                    </p:inputText>
+                                    <p:message for="price" display="icon"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">                           
+                            <p:outputLabel for="category">Category</p:outputLabel>
+                            <p:selectOneMenu value="#{productCtrl.product.categoryId}" 
+                                             effect="fold"
+                                             style="width: 100%;"
+                                             id="category">
+                                <f:selectItem itemLabel="Select Category" itemValue="-1" />
+                                <f:selectItems value="#{productCtrl.allCategories()}" var="cat" itemValue="#{cat.id}" itemLabel="#{cat.category}"/>                          
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="form-group">
+                            <p:fileUpload fileUploadListener="#{productCtrl.handleFileUpload}" 
+                                          mode="advanced" 
+                                          dragDropSupport="false"  
+                                          sizeLimit="1000000" 
+                                          fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                        </div>
+                        <p:commandButton action="#{productCtrl.saveData()}" value="Add Product" styleClass="btn btn-success float-right" icon="pi-save" update="msg" ajax="true"/>
+                    </h:form>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+    </h:body>
+</html>
+
